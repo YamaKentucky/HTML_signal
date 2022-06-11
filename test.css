@@ -17,6 +17,12 @@
 
 
 .myicon2{
+    float: left;
     --logo-color:var(--singou_1);
     --logo2-color:var(--singou_2);
+}
+
+
+.item{
+    float: right;
 }

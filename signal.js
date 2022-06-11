@@ -45,9 +45,9 @@ function getNow() {
     //信号タイミング計算
     var t_sec = (3600*hour + 60*min + sec)-base_time;
     if ((t_sec-tim_red)%(tim_blue+tim_red)<=tim_blue){
-        changeColor("signal",1);
+        changeColor("left_signal_svg",1);
     }else if(t_sec%(tim_blue+tim_red)<=tim_red){
-        changeColor("signal",0);
+        changeColor("left_signal_svg",0);
     }
 
 	var s = year + "年" + mon + "月" + day + "日" + hour + "時" + min + "分" + sec + "秒" ; 

@@ -1,3 +1,7 @@
+<!-- 残り時間表示 -->
+<!-- デザイン性 -->
+<!-- 時間修正機能 -->
+
 <!DOCTYPE html>
 <html lang="ja">
     
@@ -11,16 +15,25 @@
     <title>Document</title>
   </head>
   <body>
-      <div class="myicon2"><svg><use  xlink:href="#singou" id="signal"></use></svg></div>
-  
-    <!-- <div class="border-radius" ></div> -->
-    <span id="view_clock"></span>
-    <!-- <p id="target">ここの色が変わります</p> -->
-    <!-- <input type="button" value=" ボタン " onclick="changeColor('signal');" /> -->
+      <div class="myicon2"><svg><use  xlink:href="#singou" id="left_signal_svg"></use></svg></div>
+        
+        <div class="item">
+            <div class="timer-time">10</div>
+            <svg width="160" height="160" xmlns="http://www.w3.org/2000/svg">
+             <g>
+              <title>Pie Timer</title>
+              <circle id="circle" class="timer-circle" r="40" cy="81" cx="81" stroke-width="8" stroke="#6fdb6f" fill="none"/>
+             </g>
+            </svg>
+        </div>
+        <div><span id="view_clock"></span></div>
+
+
+    
     <h2>条件</h2>
         11:15ちょうどに赤信号になる<br>
-        124s青信号<br>
-        20s赤信号
+        124s赤信号<br>
+        20s青信号
   </body>
   
 </html>
@@ -30,7 +43,7 @@
 <svg display="none">
     <defs>
 
-    <symbol id="singou" width="50%" height="50%" viewBox="0 0 143 265" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:1.5;">
+    <symbol id="singou" width="80%" height="80%" viewBox="0 0 143 265" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:1.5;">
         <g transform="matrix(1,0,0,1,-71.6474,-10.9034)">
             <g transform="matrix(0.983797,0,0,1.01915,3.45718,-5.24738)">
                 <path d="M213.373,43.46C213.373,28.752 201.021,16.828 185.784,16.828C160.202,16.828 122.38,16.828 97.072,16.828C82.303,16.828 70.33,28.386 70.33,42.643C70.33,91.578 70.33,197.378 70.33,247.099C70.33,254.219 73.26,261.047 78.475,266.081C83.69,271.116 90.764,273.944 98.14,273.944C123.471,273.944 160.668,273.944 185.894,273.944C193.182,273.944 200.171,271.149 205.325,266.175C210.478,261.201 213.373,254.454 213.373,247.419L213.373,43.46Z" style="fill:rgb(147,147,147);"/>

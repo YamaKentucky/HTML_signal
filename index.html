@@ -5,29 +5,22 @@
 <!DOCTYPE html>
 <html lang="ja">
     
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="stylesheet" href="test.css">
-    <link rel="stylesheet" href="index.css">
-    <script src="signal.js"></script>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-  </head>
-  <body>
-      <div class="myicon2"><svg><use  xlink:href="#singou" id="left_signal_svg"></use></svg></div>
-        
+    <head>
+        <meta charset="UTF-8" />
+        <link rel="stylesheet" href="test.css">
+        <link rel="stylesheet" href="index.css">
+        <script src="signal.js"></script>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <div class="myicon2"><svg><use  xlink:href="#singou" id="left_signal_svg"></use></svg></div>
         <div class="item">
-            <div class="timer-time">10</div>
-            <svg width="160" height="160" xmlns="http://www.w3.org/2000/svg">
-             <g>
-              <title>Pie Timer</title>
-              <circle id="circle" class="timer-circle" r="40" cy="81" cx="81" stroke-width="8" stroke="#6fdb6f" fill="none"/>
-             </g>
-            </svg>
+            <div id="timer-time">10</div>
+                  <svg><use  xlink:href="#time_circle" id="right_time_svg"></use></svg>
         </div>
         <div><span id="view_clock"></span></div>
-
 
     
     <h2>条件</h2>
@@ -42,7 +35,6 @@
 
 <svg display="none">
     <defs>
-
     <symbol id="singou" width="80%" height="80%" viewBox="0 0 143 265" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:1.5;">
         <g transform="matrix(1,0,0,1,-71.6474,-10.9034)">
             <g transform="matrix(0.983797,0,0,1.01915,3.45718,-5.24738)">
@@ -80,5 +72,13 @@
             </g>
         </g>
     </symbol>
+    </defs>
+    <defs>
+        <symbol id="time_circle" width="160" height="160" xmlns="http://www.w3.org/2000/svg">
+            <g>
+             <title>Pie Timer</title>
+             <circle id="circle" class="timer-circle" r="40" cy="81" cx="81" stroke-width="8" stroke="#6fdb6f" fill="none"/>
+            </g>
+        </symbol>
     </defs>
 </svg>

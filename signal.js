@@ -3,6 +3,8 @@ var now = new Date();
 var tim_red =10;//124;
 var tim_blue = 20;
 var base_time=40500;//11:15:00
+var time_left=0;
+var meter_cor=0;
 
 function changeColor(idname,flg){
     var obj = document.getElementById(idname);
@@ -24,6 +26,32 @@ function changeColor(idname,flg){
 
 }
 
+function reset_meter(idname,color){
+    for (i=1;i<=10;i++){
+    // for (i=4;i<=10;i++){
+        var meter="--meter"+i;
+        document.documentElement.style.setProperty(meter,color);
+    }
+}
+
+function change_meter(idname,color,meter_base){
+    var obj = document.getElementById(idname);
+    time_meter =  time_left/meter_base *10;
+
+    for (i=parseInt(time_meter)+1;i<=10;i++){
+    // for (i=4;i<=10;i++){
+        var meter="--meter"+i;
+        document.documentElement.style.setProperty(meter,"black");
+    }
+    // if (parseInt(time_meter)==0){
+    //     reset_meter("left_signal_svg",color)
+    // }
+    document.getElementById("meter-time").textContent = parseInt(time_meter);
+    meter_cor+=1;
+    if (meter_cor==10){
+        meter_cor=0;
+    }
+}
 
 // timerID = 
 setInterval('clock()',300); //0.5秒毎にclock()を実行
@@ -47,11 +75,19 @@ function getNow() {
     //信号タイミング計算
     var t_sec = (3600*hour + 60*min + sec)-base_time;
     if ((t_sec-tim_red)%(tim_blue+tim_red)<=tim_blue){
-        document.getElementById("timer-time").textContent =tim_blue- (t_sec-tim_red)%(tim_blue+tim_red);
+        reset_meter("left_signal_svg","blue")
+        time_left=tim_blue- (t_sec-tim_red)%(tim_blue+tim_red);
+        document.getElementById("timer-time").textContent = time_left;
         changeColor("left_signal_svg",1);
+        change_meter("left_signal_svg","blue",tim_blue);//青
+        
     }else if(t_sec%(tim_blue+tim_red)<=tim_red){
-        document.getElementById("timer-time").textContent =tim_red - (t_sec)%(tim_blue+tim_red);
+        reset_meter("left_signal_svg","red")
+        time_left = tim_red - (t_sec)%(tim_blue+tim_red);
+        document.getElementById("timer-time").textContent = time_left
         changeColor("left_signal_svg",0);
+        change_meter("left_signal_svg","red",tim_red);//赤
+        
     }
     
 	var s = year + "年" + mon + "月" + day + "日" + hour + "時" + min + "分" + sec + "秒" ; 

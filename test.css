@@ -2,6 +2,16 @@
   --sample: pink;
   --singou_1: blue;
   --singou_2: red;
+  --meter1 :black;
+  --meter2 :black;
+  --meter3 :black;
+  --meter4 :black;
+  --meter5 :black;
+  --meter6 :black;
+  --meter7 :black;
+  --meter8 :black;
+  --meter9 :black;
+  --meter10 :black;
 }
 
 .border-radius {
@@ -20,6 +30,17 @@
     float: left;
     --logo-color:var(--singou_1);
     --logo2-color:var(--singou_2);
+    --Meter-1:var(--meter1);
+    --Meter-2:var(--meter2);
+    --Meter-3:var(--meter3);
+    --Meter-4:var(--meter4);
+    --Meter-5:var(--meter5);
+    --Meter-6:var(--meter6);
+    --Meter-7:var(--meter7);
+    --Meter-8:var(--meter8);
+    --Meter-9:var(--meter9);
+    --Meter-10:var(--meter10);
+
 }
 
 
